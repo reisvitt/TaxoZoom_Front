@@ -8,8 +8,8 @@ import { ClassificationHelper } from '../../helpers/classification.helper'
 import { CLASSIFICATION_RANK_NAME, CLASSIFICATION_RANK_NAME_LABEL, CLASSIFICTION_LOCAL_DATA } from '../../enums/classifications.enum'
 import Button from '../../components/button'
 import Container from '../../components/container'
-import { api } from '../../api/api'
 import LOCAL_DATA from './data.json'
+import { gameApi } from '../../api/api'
 import * as S from './styles'
 
 type TDescription = {
@@ -48,7 +48,7 @@ export default function Classifications(): JSX.Element {
         .build()
 
       // mouting path
-      const response = await api.get(`/${config.path}`)
+      const response = await gameApi.get(`/game/itis/${config.path}`)
       
       // getting data from keys
       const temp1 = response.data[config.responseKey]
