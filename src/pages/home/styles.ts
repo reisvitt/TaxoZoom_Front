@@ -15,10 +15,12 @@ export const Container = styled.div`
   img {
     margin: 0 auto;
     display: block;
+    max-width: 100vw;
   }
 
   i {
     font-size: 0.8rem;
+    overflow-wrap: break-word;
   }
 
   .quiz {
@@ -102,10 +104,12 @@ export const HeaderContainer = styled.header`
   box-shadow: 1px 2px 37px -11px rgba(0,0,0,0.75);
 `
 
-export const Header = styled.header`
+export const Header = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
+  flex-direction: column;
+  gap: 1rem;
 
   img {
     width: 60px;
@@ -124,5 +128,14 @@ export const Header = styled.header`
     background-color: ${props => props.theme.colors.fourth};
     color: ${props => props.theme.colors.primary};
     margin-left: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  @media (min-width: 768px) {
+    flex-direction: row;
+    gap: 0;
+    button {
+      margin-bottom: 0;
+    }
   }
 `

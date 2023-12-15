@@ -24,10 +24,17 @@ export const HeaderContainer = styled.header`
 export const Header = styled.header`
   display: flex;
   justify-content: space-between;
+  flex-direction: column;
+  gap: 1rem;
 
   .back {
     background-color: ${props => props.theme.colors.fourth};
     color: ${props => props.theme.colors.primary};
+  }
+
+  @media (min-width: 768px) {
+    flex-direction: row;
+    gap: 0;
   }
 `
 
@@ -42,6 +49,11 @@ export const Body = styled.div`
   display: flex;
   flex-wrap: wrap;
   gap: 2rem;
+  justify-content: center;
+
+  @media (min-width: 768px) {
+    justify-content: unset;
+  }
 `
 
 export const CardItem = styled.div`
