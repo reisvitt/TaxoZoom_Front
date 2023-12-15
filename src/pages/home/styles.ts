@@ -15,7 +15,7 @@ export const Container = styled.div`
   img {
     margin: 0 auto;
     display: block;
-    max-width: 100vw;
+    max-width: 90%;
   }
 
   i {
